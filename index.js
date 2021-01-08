@@ -12,26 +12,32 @@ express()
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const config = require("./config.json");
+const fs = require('fs');
 
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (message.channel.type == 'dm') return;
-  if (!message.content.toLowerCase().startsWith(config.prefix.toLowerCase())) return;
-  if (message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)) return;
+client.commands = new Discord.Collection();
 
- const args = message.content.trim().slice(config.prefix.length).split(/ +/g);
+client.aliases = new Discord.Collection();
 
- const command = args.shift().toLowerCase();
+fs.readdir('./events/', (err, files) => {
+  if (err) return console.error;
+  files.forEach(file => {
+      if (!file.endsWith('.js')) return;
+      const evt = require(`./events/${file}`);
+      let evtName = file.split('.')[0];
+      console.log(`Loaded event '${evtName}'`);
+      client.on(evtName, evt.bind(null, client));
+  });
+});
 
- try {
-     const commandFile = require(`./commands/${command}.js`)
-     commandFile.run(client, message, args);
- } catch (err) {
-  let cmdz = new Discord.MessageEmbed()
-  .setColor('RANDOM')
-  .setTitle(`Esse comando não existe por favor faça ${config.prefix}help`);
-  message.reply(` `,cmdz);
-}
+fs.readdir('./commands/', (err, files) => {
+  if (err) return console.error;
+  files.forEach(file => {
+      if (!file.endsWith('.js')) return;
+      const evt = require(`./commands/${file}`);
+      let evtName = file.split('.')[0];
+      console.log(`Loaded command '${evtName}'`);
+      client.on(evtName, evt.bind(null, client));
+  });
 });
 
 //welcome

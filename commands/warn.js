@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const db = require('quick.db');
 
-exports.run = async (client, message, args) => {
+module.exports = async (client, message, args) => {
         if(!message.member.hasPermission("MANAGE_SERVER")) return message.channel.send('Você não pode usar isso');
 
         const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);

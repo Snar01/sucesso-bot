@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const ms = require('ms');
 
-exports.run = async (client, message, args) => {
+module.exports = async (client, message, args) => {
 
         if (!args[0]) return message.channel.send('Você não especificou um tempo válido! `2h` | `2s`').then(m => m.delete({ timeout: 5000}));
 

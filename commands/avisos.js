@@ -1,6 +1,6 @@
 const db = require('quick.db');
 
-exports.run = async (client, message, args) => {
+module.exports = async (client, message, args) => {
         const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.author;
 
 

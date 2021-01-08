@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 
-exports.run = (client, message, args) =>{
+module.exports = async (client, message, args) => {
       const user = message.author.id;
     const name = "ticket-" + user;
     if(message.guild.channels.cache.find(ch => ch.name == name)){

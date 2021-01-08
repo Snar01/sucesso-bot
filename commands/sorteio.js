@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const ms = require("ms");
 
-exports.run = async (client, message, args) => {
+module.exports = async (client, message, args) => {
  if (!args[0]) return message.channel.send(`Você não específicou tempo!`);
  if (
  !args[0].endsWith("d") &&

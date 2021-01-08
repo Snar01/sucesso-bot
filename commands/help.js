@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 
-exports.run = async(client, message, args) => {
+module.exports = async (client, message, args) => {
   message.delete();
   
   message.reply('Clica nas reações abaixo para explorar nos meus comandos!')

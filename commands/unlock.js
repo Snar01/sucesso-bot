@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const config = require('../config.json')
 
-exports.run = async (client, message, args) => {
+module.exports = async (client, message, args) => {
   
 if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply('Você não tem permissão para usar esse comando!')
         message.channel.overwritePermissions([{ 

@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = async (client, message, args) => {
+module.exports = async (client, message, args) => {
 const deleteCount = parseInt(args[0], 10);
 if (!deleteCount || deleteCount < 1 || deleteCount > 99)
   return message.reply(

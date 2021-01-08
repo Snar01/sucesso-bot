@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const ms = require('ms');
 
-exports.run = async (client, message, args) => {
+module.exports = async (client, message, args) => {
 
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Você não tem **GERENCIAR_CANAIS** permission!').then(m => m.delete({ timeout: 5000 }));
 

@@ -1,4 +1,4 @@
-exports.run = async (client, message, args) => {
+module.exports = async (client, message, args) => {
       let user =
         message.mentions.members.first() ||
         message.guild.members.cache.get(args[0]);

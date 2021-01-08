@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 
-exports.run = async(client, message, args) => {
+module.exports = async (client, message) => {
   message.delete();
   /*message.reply('Oi').then(msg => msg.delete({timeout: 5000}));*/
  

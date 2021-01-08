@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = async (client, message, args) => {
+module.exports = async (client, message, args) => {
         if (!message.member.permissions.has("MANAGE_MESSAGES"))
         return message.reply(
           "Falta-te a permissão `Gerenciar Mensagens` para usar esse comando!"
