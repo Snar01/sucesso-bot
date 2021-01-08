@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports = async (client, message) => {
+exports.run = async (client, message, args) => {
     if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Tu não tens a permissão `Banir Membros` para usar esse comando!")
      
     let membro = message.mentions.users.first();

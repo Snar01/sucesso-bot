@@ -1,8 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const ms = require('ms');
 
-module.exports = async (client, message, args) => {
-
+exports.run = async (client, message, args) => {
         if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('Você não tem **GERENCIAR_CANAIS** permission!').then(m => m.delete({ timeout: 5000 }));
 
         if (!args[0]) return message.channel.send('Você não especificou um tempo válido! `2h` | `2s`').then(m => m.delete({ timeout: 5000}));
@@ -41,9 +40,4 @@ module.exports = async (client, message, args) => {
             .setColor('RANDON');
 
         message.channel.setRateLimitPerUser(time, reason).then(m => m.send(embed));
-
-};
-
-exports.help = {
-    name: "modolento"
 }

@@ -1,4 +1,4 @@
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
 
       if (!message.member.permissions.has("MANAGE_MESSAGES"))
         return message.channel.send("Você não tem permissões suficientes!");
@@ -16,10 +16,4 @@ module.exports = async (client, message, args) => {
         .catch(() => message.channel.send("Esse usuário não pôde ser DMed!"))
         .then(() => message.channel.send(`Enviou uma mensagem para ${user.user.tag}`));
         message.delete().catch(O_o => {});
-};
-
-exports.help = {
-  name: "dm",
-  description: "DM a user in the guild",
-  category: "fun",
 }

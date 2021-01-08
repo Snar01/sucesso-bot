@@ -1,7 +1,5 @@
-const Discord = require('discord.js');
-
-module.exports = async (client, message, args) => {
-    const embed = new Discord.MessageEmbed()
-    .setTitle(`Pong! ${client.ws.ping}ms`)
-    message.channel.send(embed)
+exports.run = async (client, message) => {
+    const ms = await message.channel.send("Ping?");
+	const clientms = ms.createdTimestamp - message.createdTimestamp;
+	ms.edit('📡 Seu ping é: ' + clientms + 'ms / 🖥 Ping do bot com Server:' + Math.floor(client.ping) + 'ms');
 }

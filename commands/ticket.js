@@ -1,8 +1,8 @@
 const Discord = require('discord.js')
 
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
       const user = message.author.id;
-    const name = "ticket-" + user;
+    const name = "ticket" + user;
     if(message.guild.channels.cache.find(ch => ch.name == name)){
         const eb = new Discord.MessageEmbed()
         .setTitle(`${message.author} você já abriu um ticket!`)
@@ -26,9 +26,4 @@ const ebww = new Discord.MessageEmbed()
 chan.send(ebww).then((m)=>{ m.pin() })
 })
 }
-}
-
-module.exports.help = {
-name : 'ticket',
-aliases: ["ticket", "tic", "ti"],
 }

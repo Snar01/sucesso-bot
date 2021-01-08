@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
     let kicked = message.mentions.users.first() || client.users.resolve(args[0]);
     let reason = args.slice(1).join(" ");
   

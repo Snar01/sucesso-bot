@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const ms = require("ms");
 
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
  if (!args[0]) return message.channel.send(`Você não específicou tempo!`);
  if (
  !args[0].endsWith("d") &&
@@ -45,11 +45,4 @@ module.exports = async (client, message, args) => {
  `O vencedor do sorteio para **${prize}** foi... ${winner}`
  );
  }, ms(args[0]));
- };
-
-exports.help = {
-    name: "giveaway",
-    description: "Create a simple giveaway",
-    usage: "<tempo> <canal> <prêmio>",
-    category: "fun",
-}
+};

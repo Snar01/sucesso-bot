@@ -1,6 +1,4 @@
-const db = require('quick.db');
-
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
         const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.author;
 
 
@@ -9,9 +7,4 @@ module.exports = async (client, message, args) => {
         if(warnings === null) warnings = 0;
 
         message.channel.send(`**${user.username}** tem *${warnings}* advertência(s)`);
-};
-
-exports.help = {
-    name: "warnings",
-    description: "Verifique os avisos de usuários"
 }

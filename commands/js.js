@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 
-module.exports = async (client, message) => {
+exports.run = async (client, message, args) => {
   message.delete();
   /*message.reply('Oi').then(msg => msg.delete({timeout: 5000}));*/
  
@@ -54,9 +54,5 @@ message.channel.send(msg);
 
 });
   message.delete(8000).catch(O_o => {});
-
-};
-
-exports.help = {
-  name: 'JavaScript'
-};
+  
+}

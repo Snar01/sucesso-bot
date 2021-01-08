@@ -1,15 +1,12 @@
 const Discord = require("discord.js");
 const config = require("../config.json");
 
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
   message.delete();
   
   message.reply('Clica nas reações abaixo para explorar nos meus comandos!')
   /*message.reply('Oi').then(msg => msg.delete({timeout: 5000}));*/
  
-
-
-  
   const delay = 2570;
   var embed = new Discord.MessageEmbed()
     .setTitle('Clica nas reações para saberres mais sobre os meus comandos!')
@@ -56,8 +53,4 @@ module.exports = async (client, message, args) => {
 });
   message.delete(8000).catch(O_o => {});
 
-};
-
-exports.help = {
-  name: 'help'
-};
+}

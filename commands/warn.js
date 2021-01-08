@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const db = require('quick.db');
 
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
         if(!message.member.hasPermission("MANAGE_SERVER")) return message.channel.send('Você não pode usar isso');
 
         const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
@@ -35,9 +35,4 @@ module.exports = async (client, message, args) => {
             user.send(`Você foi avisado em ${message.guild.name} pelo seguinte motivo: \`${reason}\``)
             await message.channel.send(`**${user.username}** Você foi advertido`)
         }
-};
-
-exports.help = {
-    name: "warn",
-    description: "Advertir um membro",
 }
