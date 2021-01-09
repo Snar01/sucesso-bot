@@ -1,11 +1,14 @@
-# [Servidor](https://discord.gg/stbDWbEX)
+## [Servidor](https://discord.gg/stbDWbEX)
 
-# O que precisas de ter?
-Precisas de ter o Node.js só!
+## O que precisas de ter?
+- [Node.js](https://nodejs.org/) só ele mais nada
 
-# Dependências 
-O discord.js
-O express
-O fs 
-O ms
-E a quick.db
+## Dependências  
+- O discord.js
+- O express
+- O fs 
+- O ms
+- E a quick.db
+
+## 🗄️ Licença
+Este código é aberto podem fazer o que quisres mas, o que é __próibido__ é a venda do código e dizerem que é vosso!

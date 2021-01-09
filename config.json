@@ -1,5 +1,6 @@
 {
     "prefix": "SEU PREFIXO",
     "token": "SEU TOKEN",
-    "name": "NOME DO SEU BOT"
+    "name": "NOME DO SEU BOT",
+    "id": "SEU ID"
 }
