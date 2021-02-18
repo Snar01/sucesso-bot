@@ -2,6 +2,7 @@
 
 ## O que precisas de ter?
 - [Node.js](https://nodejs.org/) só ele mais nada
+- [Python](https://www.python.org/)
 
 ## Dependências  
 - O discord.js
