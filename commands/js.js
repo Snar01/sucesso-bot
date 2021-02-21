@@ -4,11 +4,8 @@ const config = require("../config.json");
 exports.run = async (client, message, args) => {
   message.delete();
   /*message.reply('Oi').then(msg => msg.delete({timeout: 5000}));*/
- 
-
-
   
-  const delay = 2570;
+  const delay = 0;
   var embed = new Discord.MessageEmbed()
     .setTitle('Sobre o JavaScript e say')
     .setDescription('🤔 Informações sobre o JavaScript \n \n ✏️ Comando de say em JavaScript'); 
@@ -53,6 +50,6 @@ message.channel.send(msg);
       });
 
 });
-  message.delete(8000).catch(O_o => {});
+  message.delete().catch(O_o => {});
   
 }
